@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Portfolio </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="#">
+<style>
+body {
+  font-family: "montserrat", sans-serif;
+  background-color: white;
+  color: black;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: auto;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, maroon 0.5%, deepskyblue 100%);
+  overflow-x: hidden;
+  padding-left: 0px;
+}
+
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.main {
+  margin-left: 250px; 
+  font-size: 28px; 
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.tablink {
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.tablink:hover {
+  background-color: LightSeaGreen;
+}
+
+.tabcontent {
+  color: black;
+  display: none;
+  padding-left:0px;
+  height: 100%;
+}
+
+
+.image{
+	height: 100%;
+	width: 100px;
+	}
+
+
+	
+
+input {
+  width: 90%;
+  height:40px;
+  background-color: deepskyBlue;
+  border-radius: 20px;
+}
+
+button {
+	height: 30px;
+	border-radius: 10px;
+	background-color: green;
+	color: white;
+	margin-top:20px;
+	}
+
+
+	.mylinks{
+		
+		position: fixed;
+  		z-index: 1;
+ 		bottom: 0;
+  		right: 0;
+		width: 1081px;
+		height: 30px;
+		border: 10px ;
+		padding:20px 20px 20px 20px;
+		text-align: center;
+		background-color: SeaShell;
+		}
+
+	.container{
+ 	 	width: 100%;
+  		background-color: lightgray;
+		border-radius:50px;
+	
+		}
+
+.skills {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius:50px;
+  color: white;
+ 
+}
+
+.python {width: 95%; background:   linear-gradient( to right, black 1%, Green 100%);}
+.c {	width: 85%; background:  linear-gradient( to right, black 1%, Green 100%);}
+.html {width: 90%; background: linear-gradient( to right, black 1%, Green 100%);}
+.css {width: 80%; background:   linear-gradient( to right, black 1%, Green 100%);}
+.sql {width: 85%; background:  linear-gradient( to right, black 1%, Green 100%);}
+.js {width: 70%; background:  linear-gradient( to right, black 1%, Green 100%);}
+
+	
+	
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 26px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+	.line{
+		width:100%;
+		height:2px;
+		z-index:1;
+		right:0px;
+		background-color: MediumSeaGreen;
+		}
+
+	
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+<a class="tablink" onclick="openPage('Home', this, 'white')" id="defaultOpen"> <span class="fa fa-fw fa-home"></span> Home</a>
+<a class="tablink" onclick="openPage('Education', this, 'white')"> <span class="fa fa-fw fa-mortar-board"></span> Education</a>
+<a class="tablink" onclick="openPage('Skills' , this, 'white')"> <span class=" fa fa-fw fa-bar-chart"></span> Skills</a>
+<a class="tablink" onclick="openPage('Personal-Details', this, 'white')"> <span class="fa fa-fw fa-user "> </span> Personal Details</a>
+<a class="tablink" onclick="openPage('Contact', this, 'white')"> <span class="fa fa-fw fa-envelope "></span> Contact</a>
+
+</div>
+
+<div class="main">
+	<div id="Home" class="tabcontent">
+	
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="#" style="width:100%" alt="error">
+  <div class="text">Never give up</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="#" style="width:100%" alt="error">
+  <div class="text">Believe yourself</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="#" style="width:100%" alt="error">
+  <div class="text">Try again and again. </div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)"> < </a>
+<a class="next" onclick="plusSlides(1)"> > </a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+<div style="text-align:center;">	
+  <h3>VINEET VISHWAKARMA</h3>
+  <p>Student at RGPV Bhopal</p>
+  <h2>Web Developer and Designer</h2>
+</div>
+  <p> </p>
+	
+  </div>
+
+
+<div id="Education" class="tabcontent">
+	<h3 align="center"> EDUCATION <h3> 
+ <p style="color:green;"><span style="margin-right:10px;" class="fa fa-fw fa-mortar-board"> </span> Graduation </p>
+ <p><span style="margin-right:10px;" class="fa fa-fw fa-university"> </span> Bachelor of Technology </p>
+ <p><span style="margin-right:10px;" class="fa fa-fw fa-gears"> </span> CS Engineering </p>
+ <p><span style="margin-right:10px;" class="fa fa-fw fa-history"> </span> Pursuing final year <p>
+ <p><span style="margin-right:10px;" class="fa fa-fw fa-map-marker"></span> Rajiv Gandhi University </p>
+<div class="line"> </div>
+	
+	<p style="color:Green;"><span style="margin-right:10px;" class="fa fa-fw fa-university"> </span> B.Tech </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-gears"> </span> CSE </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-calendar"></span> 2019-2023</p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-trophy"></span> 8.71 CGPA </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-map-marker"></span> Rajiv Gandhi University </p>
+	  
+
+<div class="line"> </div>
+	<p style="color:Green;"><span style="margin-right:10px;" class="fa fa-fw fa-university"> </span> MPBSE </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-gears"> </span> Madhya-Pradesh Board of secondary education </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-calendar"></span> 2016-2017</p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-trophy"></span> 9.7 GPA </p>
+	<p><span style="margin-right:10px;" class="fa fa-fw fa-map-marker"></span> HFC SCHOOL </p>
+
+
+</div>
+
+<div id="Skills" class="tabcontent">
+
+  <h3 align="center"> SKILLS</h3>
+	
+	<p><div style="font-family:Lucida Console;"> PYTHON</div></p>
+	<div class="container">
+	<div class="skills python">95%</div>
+	</div>
+	
+	
+
+	<p style="font-family:Lucida Console;"> C Language </p>
+	<div class="container">
+	<div class="skills c">85%</div>
+	</div>
+
+	<p style="font-family:Lucida Console;"> HTML</p>
+	<div class="container">
+	<div class="skills html">90%</div>
+	</div>
+
+	<p style="font-family:Lucida Console;"> CSS</p>
+	<div class="container">
+  	<div class="skills css">80%</div>
+	</div>
+
+	<p style="font-family:Lucida Console;"> SQL</p>
+	<div class="container">
+ 	<div class="skills sql">85%</div>
+	</div>
+
+	<p style="font-family:Lucida Console;"> JavaScript</p>
+	<div class="container">
+	<div class="skills js">70%</div>
+	</div>
+	</div>
+
+
+<div id="Personal-Details" class="tabcontent">
+  <h3 align="center"> PERSONAL DETAILS </h3>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-female"> </span> Male </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-birthday-cake"> </span> 23 May 2001 </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-tint"> </span> A+ </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-language"> </span> English </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-mobile"> </span> +916234355676 </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-envelope-o"> </span> 8519046634a@gmail.com </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-map-marker">  </span> Indore Madhya-Pradesh  </p>
+
+  <p><span style="margin-right:10px;" class="fa fa-fw fa-flag"> </span> India </p>
+
+</div>
+
+
+
+<div id="Contact" class="tabcontent">
+	<h3 align="center"> CONTACT </h3>
+
+	<div><label for="name">Name</label></div>
+
+	<input   style="box-width=100%" type="text" id="name"	placeholder="Your Name..." required name="Name"><div>
+
+	<label for="email">Email</label><div>
+
+        <input   type="email"   id="email" placeholder="Your Email..." required name="Email"><div>
+
+	<label for="subject">Subject</label><div>
+
+        <input   type="text"	id="subject" placeholder="Subject..." required name="Subject"><div>
+
+	<label for="message">Message</label><div>
+
+	
+        <input  style="height:100px" type="text" id="message"	placeholder="Write something..." required name="Message" ><div>
+
+
+        <button type="submit">  <i class="fa fa-fw fa-paper-plane"></i> SEND MESSAGE  </button>  
+
+	<div class="mylinks">
+
+	<a style="color:blue;" href="#"><i class="fa fa-linkedin"></i></a> 
+	
+	<a style="color:blue;" href="#"><i class="fa fa-github"></i></a> 
+
+	<a style="color:blue;" href="#"><i class="fa fa-instagram"></i></a> 
+	
+	<a style="color:blue;" href="#"><i class="fa fa-whatsapp"></i></a>
+	
+	</div> 
+	
+
+
+
+</div>
+</div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+   
+</body>
+</html> 
