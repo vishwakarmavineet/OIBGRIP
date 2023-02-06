@@ -1,0 +1,257 @@
+
+<!DOCKTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Temperature Converter</title>
+
+
+	<style>
+
+body{
+	background-image: url(bg10.png);
+	}
+    
+}
+
+.display {
+    
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-top: 150px;
+    
+}
+
+.temp_calculator {
+    width: 500px;
+    margin: 130px auto;
+    border-radius: 10px;
+    background-image: url(bg11.png);
+    color: black; 
+}
+form {
+    padding: 15px;
+}
+h4.title {
+    font-family: Lucida Console;
+    background: black;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: indigo;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px 10px 0px 0px;
+}
+.calculator_input {
+    float: left;
+}
+label {
+    font-size: 18px;
+    font-family: Verdana;
+}
+input {
+    width: 100%;
+    height:25px;
+    font-size: 20px;
+    font-family: Copperplate ;
+    border: 2px solid black;
+    border-radius: 4px;
+    background: white;
+    
+}
+.result_area label {
+    width: 18%;
+    float: left;
+}
+.result_area input {
+	width: 82%;
+	
+}
+.calculator_value label {
+    width:50%;
+    float: left;
+    
+}
+.calculator_value input {
+    width: 50%;
+    font-size: 18px;
+    
+    
+	
+}
+.calculator_value {
+    margin-bottom: 30px;
+    
+}
+
+
+
+
+.calculator_input_from {
+    float: left;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: Verdana;
+    
+}
+.calculator_input_to {
+    float: right;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: Verdana;
+    
+}
+
+
+
+.result_area {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+button#convert {
+    float: right;
+}
+button.cal-btn {
+    font-family: lucida console;
+    font-size: 18px;
+    width: 45%;
+    height: 40px;
+    padding: 12px;
+    border: 3px offset;
+    border-radius: 30px 30px 30px 30px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+cal-btn:active {
+  transform: translateY(3px);
+   
+}
+select {
+    padding: 5px;
+}
+
+
+</style>
+
+  </head>
+  <body>
+
+	<div class="temp_calculator">
+    <h4 class="title">temperature converter</h4>
+      <form action="" name="form">
+	  
+        
+          <div class="calculator_input_from">
+            <label for="">From:</label>
+            <select name="input" id="input">
+              <option value="celsius" >Celsius (°C)</option>
+              <option value="fahrenheit" >Fahrenheit (°F)</option>
+              <option value="kelvin" >Kelvin (K)</option>
+            </select>
+          </div>
+          <div class="calculator_input_to">
+            <label for="">To:</label>
+            <select name="output" id="output">
+              <option value="celsius" >Celsius (°C)</option>
+              <option value="fahrenheit" >Fahrenheit (°F)</option>
+              <option value="kelvin" >Kelvin (K)</option>
+            </select>
+          </div> 
+	
+	<div class="temp_calculator_inputs">
+          <div class="calculator_value">
+            <label for="">Value to convert:</label>
+            <input type="number" placeholder="0.00" name="value" id="input_value">
+          </div>
+
+
+         
+        </div>
+	
+        <button style="background: indigo ;border-color: crimson;" type="button" id="clear" class="cal-btn" onclick="reset()">clear</button>
+	<button style="background: Green ;border-color: crimson ;" type="button" id="convert" class="cal-btn" onclick="convertTemperature()">convert</button>
+        
+        <div class="result_area">
+          <label for="">Answer:</label>
+          <input type="number" value="" id="result">
+
+
+        </div>
+      </form>
+    </div>
+
+
+    <script>
+      function convertTemperature()
+	{
+
+        let val = document.getElementById("input_value");
+        let result = document.getElementById("result");
+        let input = document.getElementById("input");
+        let output = document.getElementById("output");
+
+       
+
+        let inputValue = input.value;
+        let outputValue = output.value;
+
+        //Celsius
+        if(inputValue === "celsius" && outputValue === "fahrenheit")
+	{
+          result.value = Number((val.value) * 9/5) + 32 ;
+        }
+	else if(inputValue === "celsius" && outputValue === "kelvin")
+	{
+          result.value = Number(val.value) + 273.15;
+        }
+	else if(inputValue === "celsius" && outputValue === "celsius")
+	{
+          result.value = val.value;
+        }
+
+
+        //Fahrenheit
+        if(inputValue === "fahrenheit" && outputValue === "celsius")
+	{
+          result.value = Number((val.value - 32) * 5) / 9;
+        }
+	else if(inputValue === "fahrenheit" && outputValue === "kelvin")
+	{
+          result.value = Number((val.value - 32) * 5/9) + 273.15;
+        }
+	else if(inputValue === "fahrenheit" && outputValue === "fahrenheit")
+	{
+          result.value = val.value;
+        }
+
+
+        //Kelvin
+        if(inputValue === "kelvin" && outputValue === "celsius")
+	{
+          result.value = Number(val.value) - 273.15;
+        }
+	else if(inputValue === "kelvin" && outputValue === "fahrenheit")
+	{
+          result.value = Number((val.value - 273.15) * 9/5) + 32;
+        }
+	else if(inputValue === "kelvin" && outputValue === "kelvin")
+	{
+          result.value = val.value;
+        }
+
+	
+      
+      }
+	function reset()
+      {
+        convertTemperature();
+      }
+
+    </script>
+
+
+  </body>
+</html>
